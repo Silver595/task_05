@@ -228,95 +228,95 @@ function usePortfolioEffects() {
 export default function App() {
   usePortfolioEffects();
 
-  // return (
-  //   <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden">
-  //     <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
-  //     <div
-  //       id="preloader"
-  //       className="fixed inset-0 z-[9999] bg-slate-50 dark:bg-dark flex items-center justify-center"
-  //     >
-  //       <div className="flex flex-col items-center gap-4">
-  //         <div className="relative w-16 h-16">
-  //           <div className="absolute inset-0 border-4 border-slate-200 dark:border-white/10 rounded-full"></div>
-  //           <div className="absolute inset-0 border-4 border-primary rounded-full border-t-transparent animate-spin"></div>
-  //         </div>
-  //         <span className="text-sm font-bold tracking-widest uppercase animate-pulse">
-  //           Loading...
-  //         </span>
-  //       </div>
-  //     </div>
+  return (
+    <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden">
+      <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
+      <div
+        id="preloader"
+        className="fixed inset-0 z-[9999] bg-slate-50 dark:bg-dark flex items-center justify-center"
+      >
+        <div className="flex flex-col items-center gap-4">
+          <div className="relative w-16 h-16">
+            <div className="absolute inset-0 border-4 border-slate-200 dark:border-white/10 rounded-full"></div>
+            <div className="absolute inset-0 border-4 border-primary rounded-full border-t-transparent animate-spin"></div>
+          </div>
+          <span className="text-sm font-bold tracking-widest uppercase animate-pulse">
+            Loading...
+          </span>
+        </div>
+      </div>
 
-  //     <div
-  //       id="toast-container"
-  //       className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"
-  //     ></div>
+      <div
+        id="toast-container"
+        className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"
+      ></div>
 
-  //     <div className="fixed inset-0 z-0 bg-grid-pattern pointer-events-none"></div>
-  //     <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none opacity-50 dark:opacity-20 z-0"></div>
+      <div className="fixed inset-0 z-0 bg-grid-pattern pointer-events-none"></div>
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none opacity-50 dark:opacity-20 z-0"></div>
 
-  //     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6">
-  //       <nav className="bg-white/70 dark:bg-surface/70 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-full px-6 py-3 flex items-center gap-8 shadow-sm transition-all duration-300 w-full max-w-4xl justify-between md:justify-start reveal-on-scroll">
-  //         <a
-  //           href="#"
-  //           className="text-xl font-bold font-display tracking-tight text-slate-900 dark:text-white hoverable magnetic-btn focus:outline-none relative z-20"
-  //         >
-  //           Pranav<span className="text-primary">.</span>
-  //         </a>
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6">
+        <nav className="bg-white/70 dark:bg-surface/70 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-full px-6 py-3 flex items-center gap-8 shadow-sm transition-all duration-300 w-full max-w-4xl justify-between md:justify-start reveal-on-scroll">
+          <a
+            href="#"
+            className="text-xl font-bold font-display tracking-tight text-slate-900 dark:text-white hoverable magnetic-btn focus:outline-none relative z-20"
+          >
+            Pranav<span className="text-primary">.</span>
+          </a>
 
-  //         <div
-  //           className="hidden md:flex items-center gap-6 text-sm font-medium ml-auto relative z-20"
-  //           id="desktop-menu"
-  //         >
-  //           <a
-  //             href="#home"
-  //             className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
-  //           >
-  //             Home
-  //           </a>
-  //           <a
-  //             href="#about"
-  //             className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
-  //           >
-  //             About
-  //           </a>
-  //           <a
-  //             href="#work"
-  //             className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
-  //           >
-  //             Project
-  //           </a>
-  //           <a
-  //             href="#writing"
-  //             className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
-  //           >
-  //             Writing
-  //           </a>
-  //           <a
-  //             href="#contact"
-  //             className="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-bold text-xs hover:scale-105 transition-transform hoverable magnetic-btn"
-  //           >
-  //             Hire Me
-  //           </a>
-  //         </div>
+          <div
+            className="hidden md:flex items-center gap-6 text-sm font-medium ml-auto relative z-20"
+            id="desktop-menu"
+          >
+            <a
+              href="#home"
+              className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
+            >
+              About
+            </a>
+            <a
+              href="#work"
+              className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
+            >
+              Project
+            </a>
+            <a
+              href="#writing"
+              className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
+            >
+              Writing
+            </a>
+            <a
+              href="#contact"
+              className="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-bold text-xs hover:scale-105 transition-transform hoverable magnetic-btn"
+            >
+              Hire Me
+            </a>
+          </div>
 
-  //         <div className="flex items-center gap-3 md:ml-4 border-l border-slate-200 dark:border-white/10 pl-4 md:pl-6 relative z-20">
-  //           <button
-  //             id="theme-toggle"
-  //             aria-label="Toggle dark mode"
-  //             className="w-8 h-8 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors hoverable magnetic-btn focus:outline-none"
-  //           >
-  //             <i className="fas fa-moon"></i>
-  //           </button>
-  //           <button
-  //             id="mobile-menu-btn"
-  //             aria-label="Open menu"
-  //             className="md:hidden text-slate-900 dark:text-white p-1 hoverable magnetic-btn focus:outline-none"
-  //           >
-  //             <i className="fas fa-bars text-lg"></i>
-  //           </button>
-  //         </div>
-  //       </nav>
-  //     </header>
+          <div className="flex items-center gap-3 md:ml-4 border-l border-slate-200 dark:border-white/10 pl-4 md:pl-6 relative z-20">
+            <button
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+              className="w-8 h-8 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors hoverable magnetic-btn focus:outline-none"
+            >
+              <i className="fas fa-moon"></i>
+            </button>
+            <button
+              id="mobile-menu-btn"
+              aria-label="Open menu"
+              className="md:hidden text-slate-900 dark:text-white p-1 hoverable magnetic-btn focus:outline-none"
+            >
+              <i className="fas fa-bars text-lg"></i>
+            </button>
+          </div>
+        </nav>
+      </header>
 
       
      
@@ -338,6 +338,6 @@ export default function App() {
     
 
       
-  //   </div>
-  // );
+    </div>
+  );
 }
