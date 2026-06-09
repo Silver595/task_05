@@ -82,7 +82,34 @@ function usePortfolioEffects() {
     const sections = Array.from(document.querySelectorAll(".section-spy"));
     const navLinks = Array.from(document.querySelectorAll(".nav-link"));
 
-   
+    const onScroll = () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn?.classList.remove("translate-y-20", "opacity-0");
+      } else {
+        scrollToTopBtn?.classList.add("translate-y-20", "opacity-0");
+      }
+
+      let current = "";
+      sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - 200) {
+          current = section.getAttribute("id") || "";
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("text-primary", "dark:text-white", "font-bold");
+        link.classList.add("text-slate-600", "dark:text-slate-400");
+        if (current && link.getAttribute("href")?.includes(current)) {
+          link.classList.add("text-primary", "dark:text-white", "font-bold");
+          link.classList.remove("text-slate-600", "dark:text-slate-400");
+        }
+      });
+    };
+    add(window, "scroll", onScroll, { passive: true });
+    add(scrollToTopBtn, "click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" }),
+    );
+
     const onParallaxScroll = () => {
       document.querySelectorAll(".parallax-img").forEach((img) => {
         const rect = img.parentElement?.getBoundingClientRect();
