@@ -387,6 +387,22 @@ export default function App() {
           <i className="fas fa-times text-2xl"></i>
         </button>
       </div>
+       <section
+        id="home"
+        className="section-spy relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <div className="hero-badge inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-sm mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                  Available for 2026
+                </span>
+              </div>
+              </section>
     </div>
   );
 }
