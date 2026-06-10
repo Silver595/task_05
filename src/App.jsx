@@ -387,6 +387,7 @@ export default function App() {
           <i className="fas fa-times text-2xl"></i>
         </button>
       </div>
+
        <section
         id="home"
         className="section-spy relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -402,7 +403,68 @@ export default function App() {
                   Available for 2026
                 </span>
               </div>
-              </section>
+
+              <h1 className="font-display text-5xl md:text-7xl lg:text-[6rem] font-bold leading-[1.1] md:leading-[0.9] tracking-tight mb-6 text-slate-900 dark:text-white">
+                <div className="hero-heading-line overflow-hidden">
+                  <span className="block">Frontend</span>
+                </div>
+
+                <div className="hero-heading-line overflow-hidden pb-2">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-secondary animate-gradient-x bg-[length:200%_auto]">
+                    Experience
+                  </span>
+                </div>
+
+                <div className="hero-heading-line overflow-hidden">
+                  <span className="block">Digital.</span>
+                </div>
+              </h1>
+
+              <p className="hero-description text-lg text-slate-600 dark:text-slate-400 max-w-md mx-auto lg:mx-0 mb-10 leading-relaxed">
+                Transforming complex ideas into high-performance{" "}
+                <span className="text-slate-900 dark:text-white font-semibold">
+                  aesthetically pleasing
+                </span>{" "}
+                interactive websites.
+              </p>
+
+              <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a
+                  href="#work"
+                  className="group relative px-8 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-bold overflow-hidden hover:scale-[1.02] transition-transform shadow-xl shadow-primary/10 hoverable magnetic-btn focus:outline-none"
+                >
+                  <span className="relative z-10">See My Work</span>
+                  <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                </a>
+                <a
+                  href="#contact"
+                  className="flex items-center justify-center w-12 h-12 rounded-full border border-slate-200 dark:border-white/20 hover:border-primary hover:text-primary transition-colors hoverable magnetic-btn focus:outline-none"
+                  aria-label="Scroll to contact"
+                >
+                  <i className="fas fa-arrow-down animate-bounce"></i>
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-image-container relative h-[400px] md:h-[600px] flex items-center justify-center order-1 lg:order-2 perspective-1000">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl animate-pulse-slow"></div>
+              <div className="hero-circle-outer absolute w-64 h-64 md:w-96 md:h-96 border border-slate-200 dark:border-white/10 rounded-full animate-spin-slow"></div>
+              <div className="hero-circle-middle absolute w-48 h-48 md:w-72 md:h-72 border border-dashed border-slate-300 dark:border-white/20 rounded-full animate-spin-slow [animation-direction:reverse]"></div>
+
+              <div className="hero-profile-img hero-image-glow relative w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-white/10 shadow-2xl animate-[float_6s_ease-in-out_infinite] z-10 group cursor-pointer hoverable magnetic-btn">
+                <img
+                  src="/images/photo.jpeg"
+                  alt="Pranav"
+                  width="800"
+                  height="800"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </div>
   );
 }
