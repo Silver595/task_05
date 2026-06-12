@@ -305,14 +305,14 @@ function usePortfolioEffects() {
     };
   }, []);
 }
-
 export default function App() {
   usePortfolioEffects();
 
   return (
     <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden">
       <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
-      <div
+
+      {/* <div
         id="preloader"
         className="fixed inset-0 z-[9999] bg-slate-50 dark:bg-dark flex items-center justify-center"
       >
@@ -325,7 +325,7 @@ export default function App() {
             Loading...
           </span>
         </div>
-      </div>
+      </div> */}
 
       <div
         id="toast-container"
@@ -455,32 +455,32 @@ export default function App() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                  Available for 2026
+                  Enthusiastic For SDE role
                 </span>
               </div>
 
               <h1 className="font-display text-5xl md:text-7xl lg:text-[6rem] font-bold leading-[1.1] md:leading-[0.9] tracking-tight mb-6 text-slate-900 dark:text-white">
                 <div className="hero-heading-line overflow-hidden">
-                  <span className="block">Frontend</span>
+                  <span className="block">Code.</span>
                 </div>
 
-                <div className="hero-heading-line overflow-hidden pb-2">
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-secondary animate-gradient-x bg-[length:200%_auto]">
-                    Experience
+                <div className="hero-heading-line overflow-hidden pb-2 ">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-secondary animate-gradient-x bg-[length:200%_auto] text-[88px]">
+                    Containerize.
                   </span>
+                  <span className="text-emerald-300">Deploy.</span>
                 </div>
 
-                <div className="hero-heading-line overflow-hidden">
-                  <span className="block">Digital.</span>
+                <div className="hero-heading-line overflow-hidden text-md">
+                  <span className="block">Scale.</span>
                 </div>
               </h1>
-
               <p className="hero-description text-lg text-slate-600 dark:text-slate-400 max-w-md mx-auto lg:mx-0 mb-10 leading-relaxed">
-                Transforming complex ideas into high-performance{" "}
+                Currently aquiring the knowledge of the{" "}
                 <span className="text-slate-900 dark:text-white font-semibold">
-                  aesthetically pleasing
+                  Devops and Cloud
                 </span>{" "}
-                interactive websites.
+                with AWS.
               </p>
 
               <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -490,7 +490,7 @@ export default function App() {
                 >
                   <span className="relative z-10">See My Work</span>
                   <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-                </a>
+                </a>  
                 <a
                   href="#contact"
                   className="flex items-center justify-center w-12 h-12 rounded-full border border-slate-200 dark:border-white/20 hover:border-primary hover:text-primary transition-colors hoverable magnetic-btn focus:outline-none"
@@ -526,11 +526,11 @@ export default function App() {
       >
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="font-display text-4xl font-bold text-slate-900 dark:text-white mb-12 reveal-on-scroll">
-            My Arsenal
+            About Me
             <span className="text-primary">.</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[500px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[500px] md:w-[1450px]">
             <div className="bento-card spotlight-card col-span-1 md:col-span-2 bg-slate-100 dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group hoverable reveal-on-scroll">
               <div className="spotlight-overlay"></div>
               <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
@@ -545,18 +545,14 @@ export default function App() {
               <div className="absolute bottom-8 left-0 right-0 w-full overflow-hidden">
                 <div className="flex gap-8 animate-marquee whitespace-nowrap opacity-50 group-hover:opacity-100 transition-opacity">
                   <span className="text-5xl font-display font-bold text-slate-300 dark:text-slate-700">
-                    REACT NEXTJS TAILWIND TYPESCRIPT FIGMA WEBGL GSAP FIREBASE
-                    HTML CSS C JAVA
-                  </span>
-                  <span className="text-5xl font-display font-bold text-slate-300 dark:text-slate-700">
-                    REACT NEXTJS TAILWIND TYPESCRIPT FIGMA WEBGL GSAP FIREBASE
-                    HTML CSS C JAVA
+                    REACT.JS EXPRESS.JS TAILWIND TYPESCRIPT JAVA
+                    JAVASCRIPT Kubernetes AWS DOCKER
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="bento-card spotlight-card col-span-1 bg-slate-900 text-white rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden hoverable reveal-on-scroll delay-100">
+            {/* <div className="bento-card spotlight-card col-span-1 bg-slate-900 text-white rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden hoverable reveal-on-scroll delay-100">
               <div className="spotlight-overlay"></div>
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary blur-3xl opacity-30 rounded-full"></div>
               <div className="relative z-10">
@@ -577,7 +573,7 @@ export default function App() {
                   00:00
                 </p>
               </div>
-            </div>
+            </div> */}
 
             <div className="bento-card spotlight-card col-span-1 bg-white dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-center gap-6 hoverable reveal-on-scroll delay-200">
               <div className="spotlight-overlay"></div>
@@ -587,7 +583,10 @@ export default function App() {
                   Open for Projects
                 </span>
               </div>
-              <div className="flex gap-4 text-2xl text-slate-600 dark:text-slate-400 relative z-10">
+              <div
+                id="skills"
+                className="flex gap-4 text-2xl text-slate-600 dark:text-slate-400 relative z-10"
+              >
                 <a
                   href="#"
                   className="hover:text-primary transition-colors hover:scale-110 transform"
@@ -600,17 +599,12 @@ export default function App() {
                 >
                   <i className="fab fa-linkedin"></i>
                 </a>
+
                 <a
                   href="#"
                   className="hover:text-primary transition-colors hover:scale-110 transform"
                 >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="#"
-                  className="hover:text-primary transition-colors hover:scale-110 transform"
-                >
-                  <i className="fab fa-dribbble"></i>
+                  <i className="fab fa-instagram"></i>
                 </a>
               </div>
             </div>
