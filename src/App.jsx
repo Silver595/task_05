@@ -110,6 +110,60 @@ function usePortfolioEffects() {
       window.scrollTo({ top: 0, behavior: "smooth" }),
     );
 
+    const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
+    const projects = Array.from(document.querySelectorAll(".project-item"));
+    filterBtns.forEach((button) => {
+      add(button, "click", () => {
+        filterBtns.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        const filterValue = button.getAttribute("data-filter");
+
+        projects.forEach((project) => {
+          const categories = (
+            project.getAttribute("data-filter-category") || ""
+          ).split(" ");
+          if (filterValue === "all" || categories.includes(filterValue || "")) {
+            project.style.display = "block";
+            project.classList.add("reveal-on-scroll", "is-visible");
+          } else {
+            project.style.display = "none";
+            project.classList.remove("reveal-on-scroll", "is-visible");
+          }
+        });
+      });
+    });
+
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      document.querySelectorAll(".project-card").forEach((card) => {
+        add(card, "mousemove", (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -3;
+          const rotateY = ((x - centerX) / centerX) * 3;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+        });
+        add(card, "mouseleave", () => {
+          card.style.transform =
+            "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+        });
+      });
+
+      document.querySelectorAll(".magnetic-btn").forEach((button) => {
+        add(button, "mousemove", (event) => {
+          const rect = button.getBoundingClientRect();
+          const x = event.clientX - rect.left - rect.width / 2;
+          const y = event.clientY - rect.top - rect.height / 2;
+          button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+        add(button, "mouseleave", () => {
+          button.style.transform = "translate(0px, 0px)";
+        });
+      });
+    }
+
     const onParallaxScroll = () => {
       document.querySelectorAll(".parallax-img").forEach((img) => {
         const rect = img.parentElement?.getBoundingClientRect();
