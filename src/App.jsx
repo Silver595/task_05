@@ -442,9 +442,10 @@ export default function App() {
         </button>
       </div>
 
-       <section
+      <section
         id="home"
-        className="section-spy relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        className="section-spy relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+      >
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left order-2 lg:order-1">
@@ -519,64 +520,115 @@ export default function App() {
         </div>
       </section>
 
-      <section 
-      id="services" className="section-spy py-24 relative z-10">
+      <section
+        id="about"
+        className="section-spy py-20 bg-white/50 dark:bg-white/5 border-y border-slate-200 dark:border-white/5 backdrop-blur-sm relative z-10"
+      >
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-16 reveal-on-scroll">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-              Skills<span className="text-primary">.</span>
-            </h2>
-            <p className="text-slate-500 max-w-lg mx-auto">
-              Providing comprehensive digital solutions to help your business
-              grow.
-            </p>
-          </div>
+          <h2 className="font-display text-4xl font-bold text-slate-900 dark:text-white mb-12 reveal-on-scroll">
+            My Arsenal
+            <span className="text-primary">.</span>
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-white dark:bg-surface border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group hoverable reveal-on-scroll spotlight-card">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[500px]">
+            <div className="bento-card spotlight-card col-span-1 md:col-span-2 bg-slate-100 dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group hoverable reveal-on-scroll">
               <div className="spotlight-overlay"></div>
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 text-2xl group-hover:bg-primary group-hover:text-white transition-colors relative z-10">
-                <i className="fas fa-layer-group"></i>
+              <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+              <div className="z-10">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                  Main Technologies
+                </h3>
+                <p className="text-slate-500 text-sm">
+                  Tools I use to create digital products.
+                </p>
               </div>
-              <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white mb-3 relative z-10">
-                UI/UX Design
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed relative z-10">
-                Creating intuitive and visually engaging interfaces, focused on
-                a seamless user experience.
-              </p>
+              <div className="absolute bottom-8 left-0 right-0 w-full overflow-hidden">
+                <div className="flex gap-8 animate-marquee whitespace-nowrap opacity-50 group-hover:opacity-100 transition-opacity">
+                  <span className="text-5xl font-display font-bold text-slate-300 dark:text-slate-700">
+                    REACT NEXTJS TAILWIND TYPESCRIPT FIGMA WEBGL GSAP FIREBASE
+                    HTML CSS C JAVA
+                  </span>
+                  <span className="text-5xl font-display font-bold text-slate-300 dark:text-slate-700">
+                    REACT NEXTJS TAILWIND TYPESCRIPT FIGMA WEBGL GSAP FIREBASE
+                    HTML CSS C JAVA
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="p-8 rounded-2xl bg-white dark:bg-surface border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group hoverable reveal-on-scroll delay-100 spotlight-card">
+
+            <div className="bento-card spotlight-card col-span-1 bg-slate-900 text-white rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden hoverable reveal-on-scroll delay-100">
               <div className="spotlight-overlay"></div>
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 text-2xl group-hover:bg-primary group-hover:text-white transition-colors relative z-10">
-                <i className="fas fa-code"></i>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary blur-3xl opacity-30 rounded-full"></div>
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 text-2xl animate-spin-slow">
+                  <i className="fas fa-location-dot"></i>
+                </div>
+                <h3 className="text-xl font-bold mb-1">Based in</h3>
+                <p className="text-slate-400">India</p>
               </div>
-              <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white mb-3 relative z-10">
-                Development
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed relative z-10">
-                Building responsive, high-performance websites and web
-                applications using modern technologies like React, Next.js, and
-                Tailwind CSS.
-              </p>
+              <div className="relative z-10">
+                <p className="text-xs text-slate-400 uppercase tracking-wider mb-1">
+                  Local Time
+                </p>
+                <p
+                  id="local-time"
+                  className="text-3xl font-display font-bold font-mono"
+                >
+                  00:00
+                </p>
+              </div>
             </div>
-            <div className="p-8 rounded-2xl bg-white dark:bg-surface border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group hoverable reveal-on-scroll delay-200 spotlight-card">
+
+            <div className="bento-card spotlight-card col-span-1 bg-white dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-center gap-6 hoverable reveal-on-scroll delay-200">
               <div className="spotlight-overlay"></div>
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 text-2xl group-hover:bg-primary group-hover:text-white transition-colors relative z-10">
-                <i className="fas fa-mobile-alt"></i>
+              <div className="relative z-10">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold uppercase tracking-wide">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>{" "}
+                  Open for Projects
+                </span>
               </div>
-              <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white mb-3 relative z-10">
-                Mobile App Development
+              <div className="flex gap-4 text-2xl text-slate-600 dark:text-slate-400 relative z-10">
+                <a
+                  href="#"
+                  className="hover:text-primary transition-colors hover:scale-110 transform"
+                >
+                  <i className="fab fa-github"></i>
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-primary transition-colors hover:scale-110 transform"
+                >
+                  <i className="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-primary transition-colors hover:scale-110 transform"
+                >
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-primary transition-colors hover:scale-110 transform"
+                >
+                  <i className="fab fa-dribbble"></i>
+                </a>
+              </div>
+            </div>
+
+            <div className="bento-card spotlight-card col-span-1 md:col-span-2 bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden hoverable reveal-on-scroll delay-300">
+              <div className="spotlight-overlay"></div>
+              <i className="fas fa-quote-right absolute top-8 right-8 text-6xl text-white/10"></i>
+              <h3 className="text-2xl md:text-3xl font-display font-bold leading-tight relative z-10 max-w-lg">
+                "Design is not just what it looks like and feels like. Design is
+                how it works."
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed relative z-10">
-                Developing cross-platform mobile applications using Flutter or
-                React Native for broader user reach.
+              <p className="mt-4 text-white/80 text-sm font-mono relative z-10">
+                - Pranav
               </p>
             </div>
           </div>
         </div>
       </section>
-      
     </div>
   );
 }
