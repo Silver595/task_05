@@ -311,22 +311,6 @@ export default function App() {
   return (
     <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden">
       <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
-
-      {/* <div
-        id="preloader"
-        className="fixed inset-0 z-[9999] bg-slate-50 dark:bg-dark flex items-center justify-center"
-      >
-        <div className="flex flex-col items-center gap-4">
-          <div className="relative w-16 h-16">
-            <div className="absolute inset-0 border-4 border-slate-200 dark:border-white/10 rounded-full"></div>
-            <div className="absolute inset-0 border-4 border-primary rounded-full border-t-transparent animate-spin"></div>
-          </div>
-          <span className="text-sm font-bold tracking-widest uppercase animate-pulse">
-            Loading...
-          </span>
-        </div>
-      </div> */}
-
       <div
         id="toast-container"
         className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"
@@ -365,12 +349,6 @@ export default function App() {
               className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
             >
               Project
-            </a>
-            <a
-              href="#writing"
-              className="nav-link text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors hoverable magnetic-btn"
-            >
-              Writing
             </a>
             <a
               href="#contact"
@@ -485,12 +463,13 @@ export default function App() {
 
               <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
-                  href="#work"
+                  href="#"
+                  projects
                   className="group relative px-8 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-bold overflow-hidden hover:scale-[1.02] transition-transform shadow-xl shadow-primary/10 hoverable magnetic-btn focus:outline-none"
                 >
                   <span className="relative z-10">See My Work</span>
                   <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-                </a>  
+                </a>
                 <a
                   href="#contact"
                   className="flex items-center justify-center w-12 h-12 rounded-full border border-slate-200 dark:border-white/20 hover:border-primary hover:text-primary transition-colors hoverable magnetic-btn focus:outline-none"
@@ -530,7 +509,7 @@ export default function App() {
             <span className="text-primary">.</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[500px] md:w-[1450px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[500px] md:w-[1000px]">
             <div className="bento-card spotlight-card col-span-1 md:col-span-2 bg-slate-100 dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group hoverable reveal-on-scroll">
               <div className="spotlight-overlay"></div>
               <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
@@ -538,21 +517,19 @@ export default function App() {
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                   Main Technologies
                 </h3>
-                <p className="text-slate-500 text-sm">
-                  Tools I use to create digital products.
-                </p>
               </div>
               <div className="absolute bottom-8 left-0 right-0 w-full overflow-hidden">
                 <div className="flex gap-8 animate-marquee whitespace-nowrap opacity-50 group-hover:opacity-100 transition-opacity">
-                  <span className="text-5xl font-display font-bold text-slate-300 dark:text-slate-700">
-                    JAVA REACT.JS EXPRESS.JS TAILWIND-CSS 
-                    JAVASCRIPT Kubernetes AWS DOCKER
-                  </span>
+                  <p align="center">
+                    <a href="https://skillicons.dev">
+                      <img src="https://skillicons.dev/icons?i=java,c,js,html,css,react&theme=light" />
+                    </a>
+                  </p>
                 </div>
               </div>
+              
             </div>
-
-            {/* <div className="bento-card spotlight-card col-span-1 bg-slate-900 text-white rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden hoverable reveal-on-scroll delay-100">
+            <div className="bento-card spotlight-card col-span-1 bg-slate-900 text-white rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden hoverable reveal-on-scroll delay-100">
               <div className="spotlight-overlay"></div>
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary blur-3xl opacity-30 rounded-full"></div>
               <div className="relative z-10">
@@ -573,7 +550,7 @@ export default function App() {
                   00:00
                 </p>
               </div>
-            </div> */}
+            </div>
 
             <div className="bento-card spotlight-card col-span-1 bg-white dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-center gap-6 hoverable reveal-on-scroll delay-200">
               <div className="spotlight-overlay"></div>
@@ -607,20 +584,11 @@ export default function App() {
                   <i className="fab fa-instagram"></i>
                 </a>
               </div>
-            </div>
+            </div> 
 
-            <div className="bento-card spotlight-card col-span-1 md:col-span-2 bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden hoverable reveal-on-scroll delay-300">
-              <div className="spotlight-overlay"></div>
-              <i className="fas fa-quote-right absolute top-8 right-8 text-6xl text-white/10"></i>
-              <h3 className="text-2xl md:text-3xl font-display font-bold leading-tight relative z-10 max-w-lg">
-                "Design is not just what it looks like and feels like. Design is
-                how it works."
-              </h3>
-              <p className="mt-4 text-white/80 text-sm font-mono relative z-10">
-                - Pranav
-              </p>
-            </div>
+       
           </div>
+          
         </div>
       </section>
     </div>
