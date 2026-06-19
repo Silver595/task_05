@@ -312,6 +312,15 @@ export default function App() {
   usePortfolioEffects();
 
   return (
+    <div>    <a href="" target="_blank" aria-label="Chat WhatsApp"
+        class="fixed bottom-8 right-8 z-[60] w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 hoverable magnetic-btn group">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping"></span>
+        <i class="fab fa-whatsapp text-3xl leading-none z-10 group-hover:rotate-12 transition-transform"></i>
+    </a>
+      <button id="scrollToTopBtn" aria-label="Gulir ke Atas"
+        class="fixed bottom-28 right-8 z-50 w-12 h-12 bg-white dark:bg-surface border border-slate-200 dark:border-white/20 rounded-full flex items-center justify-center text-slate-600 dark:text-white shadow-lg translate-y-20 opacity-0 transition-all duration-300 hover:border-primary hover:text-primary hover:-translate-y-1 hoverable focus:outline-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden ">
       <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
       <div
@@ -979,6 +988,7 @@ export default function App() {
           <p id="modal-desc" className="text-slate-600 dark:text-slate-300"></p>
         </div>
       </div>
+    </div>
     </div>
   );
 }
