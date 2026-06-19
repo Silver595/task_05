@@ -203,14 +203,17 @@ function usePortfolioEffects() {
 
     const hideModal = () => {
       modalBackdrop?.classList.add("opacity-0");
+
       modalContent?.classList.remove("scale-100", "opacity-100");
+
       modalContent?.classList.add("scale-95", "opacity-0");
-      timers.push(
-        setTimeout(() => {
-          modal?.classList.add("hidden");
-          document.body.style.overflow = "";
-        }, 300),
-      );
+
+      setTimeout(() => {
+        modal?.classList.add("hidden");
+
+        document.body.style.overflow = "auto";
+        document.documentElement.style.overflow = "auto";
+      }, 300);
     };
 
     document.querySelectorAll(".project-trigger").forEach((trigger) => {
@@ -309,7 +312,7 @@ export default function App() {
   usePortfolioEffects();
 
   return (
-    <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden">
+    <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden ">
       <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
       <div
         id="toast-container"
@@ -665,9 +668,9 @@ export default function App() {
                 Development
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed relative z-10">
-                Building real world problem solving and high-performance websites with
-                applications using modern technologies like React, Node.js, and
-                Tailwind CSS, mongodb, Socket.io.
+                Building real world problem solving and high-performance
+                websites with applications using modern technologies like React,
+                Node.js, and Tailwind CSS, mongodb, Socket.io.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-white dark:bg-surface border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group hoverable reveal-on-scroll delay-200 spotlight-card">
@@ -679,7 +682,10 @@ export default function App() {
                 Master In Cloud Architecture
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed relative z-10">
-                Building scalable cloud-native solutions with AWS, Docker, Kubernetes, and Jenkins. Passionate about automating infrastructure and delivering reliable applications from code to cloud.
+                Building scalable cloud-native solutions with AWS, Docker,
+                Kubernetes, and Jenkins. Passionate about automating
+                infrastructure and delivering reliable applications from code to
+                cloud.
               </p>
             </div>
           </div>
@@ -708,7 +714,7 @@ export default function App() {
               </div>
               <p className="text-primary font-medium mb-2">Tech</p>
               <p className="text-slate-500 text-sm leading-relaxed max-w-2xl">
-              Designed some Frontend projects without dedication.
+                Designed some Frontend projects without dedication.
               </p>
             </div>
 
@@ -724,7 +730,8 @@ export default function App() {
               </div>
               <p className="text-primary font-medium mb-2">Building Sites </p>
               <p className="text-slate-500 text-sm leading-relaxed max-w-2xl">
-              Built projects like kuber and RideWithUs which solves real world Problems.
+                Built projects like kuber and RideWithUs which solves real world
+                Problems.
               </p>
             </div>
 
@@ -740,12 +747,238 @@ export default function App() {
               </div>
               <p className="text-primary font-medium mb-2">MCA</p>
               <p className="text-slate-500 text-sm leading-relaxed max-w-2xl">
-               Specializing in cloud architecture and DevOps practices with hands-on experience in AWS, Docker, Kubernetes, and Jenkins.
+                Specializing in cloud architecture and DevOps practices with
+                hands-on experience in AWS, Docker, Kubernetes, and Jenkins.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      <section id="work" className="section-spy py-24 relative z-10">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal-on-scroll">
+            <h2 className="font-display text-4xl md:text-6xl font-bold text-slate-900 dark:text-white">
+              Projects
+              <br />
+              Selected<span className="text-primary">.</span>
+            </h2>
+            <p className="text-slate-500 text-sm md:text-base max-w-xs text-left md:text-right">
+              A combination of business strategy, aesthetic design, and clean
+              code.
+            </p>
+          </div>
+
+          <div
+            className="flex flex-wrap gap-4 mb-16 reveal-on-scroll delay-100"
+            id="portfolio-filters"
+          >
+            <button
+              className="filter-btn active px-5 py-2 rounded-full border border-slate-200 dark:border-white/10 text-sm font-bold text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all hoverable magnetic-btn"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button
+              className="filter-btn px-5 py-2 rounded-full border border-slate-200 dark:border-white/10 text-sm font-bold text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all hoverable magnetic-btn"
+              data-filter="design"
+            >
+              Frontend
+            </button>
+            <button
+              className="filter-btn px-5 py-2 rounded-full border border-slate-200 dark:border-white/10 text-sm font-bold text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all hoverable magnetic-btn"
+              data-filter="dev"
+            >
+              Full Stack Development
+            </button>
+            <button
+              className="filter-btn px-5 py-2 rounded-full border border-slate-200 dark:border-white/10 text-sm font-bold text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all hoverable magnetic-btn"
+              data-filter="mobile"
+            >
+              DevOps
+            </button>
+          </div>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 md:gap-y-32"
+            id="projects-grid"
+          >
+            <article
+              className="project-item spotlight-card group cursor-pointer project-trigger hoverable reveal-on-scroll"
+              data-filter-category="dev design"
+              data-title="Kuber"
+              data-category="UI/UX Design • Development"
+              data-image="/images/kuber.jpg"
+              data-desc="A premium fashion e-commerce platform. Headless CMS architecture with a Next.js frontend."
+            >
+              <div className="spotlight-overlay"></div>
+              <div className="project-card relative w-full aspect-[4/3] bg-slate-200 dark:bg-surface rounded-2xl overflow-hidden mb-6 preserve-3d transition-transform duration-300 shadow-lg group-hover:shadow-xl border border-slate-200 dark:border-white/5">
+                <div className="absolute inset-0 overflow-hidden transform-gpu">
+                  <img
+                    src="/images/portfolio.png"
+                    loading="lazy"
+                    width="1200"
+                    height="900"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 parallax-img"
+                    alt="Project 1"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+              </div>
+              <div className="flex justify-between items-start border-b border-slate-200 dark:border-white/10 pb-4 relative z-10">
+                <div>
+                  <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                    Portfolio
+                  </h3>
+                  <p className="text-slate-500 text-sm">
+                    UI/UX Design • Web Development
+                  </p>
+                </div>
+                <span className="w-8 h-8 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
+                  <i className="fas fa-plus group-hover:rotate-90 transition-transform"></i>
+                </span>
+              </div>
+            </article>
+
+            <article
+              className="project-item spotlight-card group cursor-pointer md:mt-24 project-trigger hoverable reveal-on-scroll delay-100"
+              data-filter-category="dev"
+              data-title="Game Dashboard"
+              data-category="Dashboard • React App"
+              data-image="/images/Game Dashboard Design.jpg"
+              data-desc="A real-time financial dashboard. Interactive data visualizations built with D3.js."
+            >
+              <div className="spotlight-overlay"></div>
+              <div className="project-card relative w-full aspect-[4/3] bg-slate-200 dark:bg-surface rounded-2xl overflow-hidden mb-6 preserve-3d transition-transform duration-300 shadow-lg group-hover:shadow-xl border border-slate-200 dark:border-white/5">
+                <div className="absolute inset-0 overflow-hidden transform-gpu">
+                  <img
+                    src="/images/portfolio.png"
+                    loading="lazy"
+                    width="1200"
+                    height="900"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 parallax-img"
+                    alt="Project 2"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+              </div>
+              <div className="flex justify-between items-start border-b border-slate-200 dark:border-white/10 pb-4 relative z-10">
+                <div>
+                  <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                    Game Dashboard
+                  </h3>
+                  <p className="text-slate-500 text-sm">
+                    Dashboard • React App
+                  </p>
+                </div>
+                <span className="w-8 h-8 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
+                  <i className="fas fa-plus group-hover:rotate-90 transition-transform"></i>
+                </span>
+              </div>
+            </article>
+
+            <article
+              className="project-item spotlight-card group cursor-pointer project-trigger hoverable reveal-on-scroll"
+              data-filter-category="design"
+              data-title="Protofolio"
+              data-category="Branding • Website"
+              data-image="/images/Capture d'écran 2025-10-22 182207.png"
+              data-desc="A complete rebranding of an architecture firm. Minimalist grid layout and subtle animations."
+            >
+              <div className="spotlight-overlay"></div>
+              <div className="project-card relative w-full aspect-[4/3] bg-slate-200 dark:bg-surface rounded-2xl overflow-hidden mb-6 preserve-3d transition-transform duration-300 shadow-lg group-hover:shadow-xl border border-slate-200 dark:border-white/5">
+                <div className="absolute inset-0 overflow-hidden transform-gpu">
+                  <img
+                    src="/images/Capture d'écran 2025-10-22 182207.png"
+                    loading="lazy"
+                    width="1200"
+                    height="900"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 parallax-img"
+                    alt="Project 3"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+              </div>
+              <div className="flex justify-between items-start border-b border-slate-200 dark:border-white/10 pb-4 relative z-10">
+                <div>
+                  <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                    Protofilio
+                  </h3>
+                  <p className="text-slate-500 text-sm">Branding • Website</p>
+                </div>
+                <span className="w-8 h-8 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
+                  <i className="fas fa-plus group-hover:rotate-90 transition-transform"></i>
+                </span>
+              </div>
+            </article>
+
+            <article
+              className="project-item spotlight-card group cursor-pointer md:mt-24 project-trigger hoverable reveal-on-scroll delay-100"
+              data-filter-category="mobile design"
+              data-title="FitTrack Pro"
+              data-category="Mobile Design • Flutter"
+              data-image="/images/Task manager app.jpg"
+              data-desc="A task management app focused on clean planning, mobile-first interactions, and simple productivity workflows."
+            >
+              <div className="spotlight-overlay"></div>
+              <div className="project-card relative w-full aspect-[4/3] bg-slate-200 dark:bg-surface rounded-2xl overflow-hidden mb-6 preserve-3d transition-transform duration-300 shadow-lg group-hover:shadow-xl border border-slate-200 dark:border-white/5">
+                <div className="absolute inset-0 overflow-hidden transform-gpu">
+                  <img
+                    src="/images/three tier arch.png"
+                    loading="lazy"
+                    width="1200"
+                    height="900"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 parallax-img"
+                    alt="Project 4"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+              </div>
+              <div className="flex justify-between items-start border-b border-slate-200 dark:border-white/10 pb-4 relative z-10">
+                <div>
+                  <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">
+                    Three-Tier Architecture
+                  </h3>
+                  <p className="text-slate-500 text-sm">
+                    • AWS • EC2 • RDS • VPC • Nginx • Node.js • MySQL • ALB •
+                    NAT Gateway
+                  </p>
+                </div>
+                <span className="w-8 h-8 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all">
+                  <i className="fas fa-plus group-hover:rotate-90 transition-transform"></i>
+                </span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div
+        id="project-modal"
+        className="hidden fixed inset-0 z-[999] flex items-center justify-center"
+      >
+        <div
+          id="modal-backdrop"
+          className="absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-300"
+        ></div>
+
+        <div
+          id="modal-content"
+          className="relative bg-white dark:bg-slate-900 rounded-2xl max-w-3xl w-[90%] p-6 scale-95 opacity-0 transition-all duration-300 overflow-y-auto max-h-[90vh]"
+        >
+          <button id="close-modal" className="absolute top-4 right-4 text-xl">
+            ✕
+          </button>
+
+          <img id="modal-image" className="w-full rounded-xl mb-4" alt="" />
+
+          <h2 id="modal-title" className="text-3xl font-bold mb-2"></h2>
+
+          <p id="modal-category" className="text-primary mb-4"></p>
+
+          <p id="modal-desc" className="text-slate-600 dark:text-slate-300"></p>
+        </div>
+      </div>
     </div>
   );
 }
