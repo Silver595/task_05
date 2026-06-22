@@ -335,12 +335,12 @@ export default function App() {
         <div className={`music-disk ${isPlaying ? "music-disk-playing" : ""}`}>
           <div className="music-disk-center hover:scale-110 "></div>
         </div>
-
-<audio
-  ref={audioRef}
-  src="/music.mp4"
-  onEnded={() => setIsPlaying(false)}
-/>      </div>
+        <audio
+          ref={audioRef}
+          src="/music.mp4"
+          onEnded={() => setIsPlaying(false)}
+        />{" "}
+      </div>
       <button
         id="scrollToTopBtn"
         aria-label="Gulir ke Atas"
