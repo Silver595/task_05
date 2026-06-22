@@ -312,36 +312,35 @@ function usePortfolioEffects() {
 export default function App() {
   usePortfolioEffects();
   const [isPlaying, setIsPlaying] = useState(false);
-const audioRef = useRef(null);
+  const audioRef = useRef(null);
 
-const handleMusicClick = () => {
-  if (isPlaying) {
-    audioRef.current.pause();
-    setIsPlaying(false);
-  } else {
-    audioRef.current
-      .play()
-      .then(() => setIsPlaying(true))
-      .catch((err) => console.log(err));
-  }
-};  
+  const handleMusicClick = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log(err));
+    }
+  };
 
   return (
     <div>
       <div
-  onClick={handleMusicClick}
-  className="fixed bottom-8 right-8 z-[60] cursor-pointer"
->
-  <div
-    className={`music-disk ${
-      isPlaying ? "music-disk-playing" : ""
-    }`}
-  >
-    <div className="music-disk-center"></div>
-  </div>
+        onClick={handleMusicClick}
+        className="fixed bottom-8 right-8 z-[60] cursor-pointer"
+      >
+        <div className={`music-disk ${isPlaying ? "music-disk-playing" : ""}`}>
+          <div className="music-disk-center hover:scale-110 "></div>
+        </div>
 
-  <audio ref={audioRef} src="/music.mp4" />
-</div>
+<audio
+  ref={audioRef}
+  src="/music.mp4"
+  onEnded={() => setIsPlaying(false)}
+/>      </div>
       <button
         id="scrollToTopBtn"
         aria-label="Gulir ke Atas"
@@ -1020,7 +1019,8 @@ const handleMusicClick = () => {
           </div>
         </section>
 
-        <section id="contact"
+        <section
+          id="contact"
           className="section-spy py-24 md:py-32 relative overflow-hidden bg-slate-100 dark:bg-[#080808]"
         >
           <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>

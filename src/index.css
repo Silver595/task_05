@@ -319,16 +319,17 @@
     #111 180deg 270deg,
     #222 270deg 360deg
   );
-  border: 3px solid #000;
+  border: 3px solid rgb(74, 102, 17);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(52, 6, 237, 0.35);
   transition: transform 0.3s ease;
+  
 }
 
 .music-disk:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
 }
 
 .music-disk-center {
@@ -336,7 +337,7 @@
   height: 18px;
   border-radius: 50%;
   background: #ff5e62;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(5, 4, 67, 0.5);
 }
 
 .music-disk-playing {
