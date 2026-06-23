@@ -12,7 +12,6 @@ export default function App() {
 
   return (
     <div>
-      {/* WhatsApp FAB */}
       <a
         href=""
         target="_blank"
@@ -23,7 +22,6 @@ export default function App() {
         <i className="fab fa-whatsapp text-3xl leading-none z-10 group-hover:rotate-12 transition-transform"></i>
       </a>
 
-      {/* Scroll to Top */}
       <button
         id="scrollToTopBtn"
         aria-label="Scroll to Top"
@@ -33,7 +31,6 @@ export default function App() {
       </button>
 
       <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden">
-        {/* Global overlays */}
         <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
         <div id="toast-container" className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"></div>
         <div className="fixed inset-0 z-0 bg-grid-pattern pointer-events-none"></div>
