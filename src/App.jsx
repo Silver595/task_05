@@ -1,4 +1,4 @@
-import {useState,useRef} from 'react';
+import { useState, useRef } from "react";
 import usePortfolioEffects from "./hooks/usePortfolioEffects";
 import Navbar from "./components/Navbar";
 import HeroSection from "./sections/HeroSection";
@@ -7,6 +7,7 @@ import SkillsSection from "./sections/SkillsSection";
 import JourneySection from "./sections/JourneySection";
 import WorkSection from "./sections/WorkSection";
 import ContactSection from "./sections/ContactSection";
+// import RailwayJourney from "./sections/RailwayJourney";
 
 export default function App() {
   usePortfolioEffects();
@@ -27,15 +28,22 @@ export default function App() {
 
   return (
     <div>
-      <a
-        href=""
-        target="_blank"
-        aria-label="Chat WhatsApp"
-        className="fixed bottom-8 right-8 z-[60] w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 hoverable group"
-      >
-        <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping"></span>
-        <i className="fab fa-whatsapp text-3xl leading-none z-10 group-hover:rotate-12 transition-transform"></i>
-      </a>
+      <div>
+            <div
+  onClick={handleMusicClick}
+  className="fixed bottom-8 right-8 z-[60] cursor-pointer"
+>
+  <div
+    className={`music-disk ${
+      isPlaying ? "music-disk-playing" : ""
+    }`}
+  >
+    <div className="music-disk-center"></div>
+  </div>
+
+  <audio ref={audioRef} src="/music.mp4" />
+</div>
+      </div>
 
       <button
         id="scrollToTopBtn"
@@ -47,7 +55,10 @@ export default function App() {
 
       <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden">
         <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
-        <div id="toast-container" className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"></div>
+        <div
+          id="toast-container"
+          className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 pointer-events-none"
+        ></div>
         <div className="fixed inset-0 z-0 bg-grid-pattern pointer-events-none"></div>
         <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none opacity-50 dark:opacity-20 z-0"></div>
 
@@ -56,6 +67,7 @@ export default function App() {
         <AboutSection />
         <SkillsSection />
         <JourneySection />
+        {/* <div><RailwayJourney /></div> */}
         <WorkSection />
         <ContactSection />
       </div>
