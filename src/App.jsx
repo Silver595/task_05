@@ -1,3 +1,4 @@
+import {useState,useRef} from 'react';
 import usePortfolioEffects from "./hooks/usePortfolioEffects";
 import Navbar from "./components/Navbar";
 import HeroSection from "./sections/HeroSection";
