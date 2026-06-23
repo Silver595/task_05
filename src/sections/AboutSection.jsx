@@ -1,3 +1,13 @@
+import LogoLoop from '@/components/LogoLoop.jsx';
+import {SiReact, SiNextdotjs, SiTypescript, SiTailwindcss} from 'react-icons/si';
+
+const techLogos = [
+    { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" }
+]
+
 export default function AboutSection() {
   return (
     <section
@@ -66,7 +76,7 @@ export default function AboutSection() {
               <div className="reverse">
                 <div className="marquee-content">
                   {[...Array(1)].map((_, i) => (
-                    <div key={i} className="flex items-center gap-8 px-6">
+                  <div key={i} className="flex items-center gap-8 px-6">
                       <img src="https://skillicons.dev/icons?i=github&theme=light" alt="GitHub" />
                       <img src="https://skillicons.dev/icons?i=git&theme=light" alt="Git" />
                       <img src="https://skillicons.dev/icons?i=postman&theme=light" alt="Postman" />
@@ -84,6 +94,26 @@ export default function AboutSection() {
             </div>
           </div>
 
+          {/*      <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
+      <LogoLoop
+        logos={techLogos}
+        speed={100}
+        direction="left"
+        logoHeight={60}
+        gap={60}
+        hoverSpeed={0}
+        scaleOnHover
+        fadeOut
+        fadeOutColor="#ffffff"
+        ariaLabel="Technology partners"
+      />
+      
+
+      <LogoLoop
+        logos={techLogos}
+  useCustomRender={false}
+/>
+    </div>
           {/* Open for Projects */}
           <div className="bento-card spotlight-card col-span-1 bg-white dark:bg-surface border border-slate-200 dark:border-white/10 rounded-3xl p-8 flex flex-col justify-center gap-6 hoverable reveal-on-scroll delay-200">
             <div className="spotlight-overlay"></div>
