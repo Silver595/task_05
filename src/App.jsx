@@ -9,6 +9,20 @@ import ContactSection from "./sections/ContactSection";
 
 export default function App() {
   usePortfolioEffects();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const handleMusicClick = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log(err));
+    }
+  };
 
   return (
     <div>

@@ -309,3 +309,46 @@
     animation: profileImageEnter 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     animation-delay: 0.4s;
 }
+.music-disk {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #111 0deg 90deg,
+    #222 90deg 180deg,
+    #111 180deg 270deg,
+    #222 270deg 360deg
+  );
+  border: 3px solid rgb(74, 102, 17);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(52, 6, 237, 0.35);
+  transition: transform 0.3s ease;
+  
+}
+
+.music-disk:hover {
+  transform: scale(1.5);
+}
+
+.music-disk-center {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ff5e62;
+  border: 2px solid rgba(5, 4, 67, 0.5);
+}
+
+.music-disk-playing {
+  animation: diskSpin 3s linear infinite;
+}
+
+@keyframes diskSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
