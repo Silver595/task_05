@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useState, useRef } from "react";
 
 function usePortfolioEffects() {
   useEffect(() => {
@@ -310,18 +311,36 @@ function usePortfolioEffects() {
 }
 export default function App() {
   usePortfolioEffects();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const handleMusicClick = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log(err));
+    }
+  };
 
   return (
     <div>
-      <a
-        href=""
-        target="_blank"
-        aria-label="Chat WhatsApp"
-        class="fixed bottom-8 right-8 z-[60] w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 hoverable group"
+      <div
+        onClick={handleMusicClick}
+        className="fixed bottom-8 right-8 z-[60] cursor-pointer"
       >
-        <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping"></span>
-        <i class="fab fa-whatsapp text-3xl leading-none z-10 group-hover:rotate-12 transition-transform"></i>
-      </a>
+        <div className={`music-disk ${isPlaying ? "music-disk-playing" : ""}`}>
+          <div className="music-disk-center hover:scale-110 "></div>
+        </div>
+        <audio
+          ref={audioRef}
+          src="/music.mp4"
+          onEnded={() => setIsPlaying(false)}
+        />{" "}
+      </div>
       <button
         id="scrollToTopBtn"
         aria-label="Gulir ke Atas"
@@ -420,12 +439,6 @@ export default function App() {
             Project
           </a>
           <a
-            href="#writing"
-            className="text-3xl font-display font-bold mobile-link hover:text-primary hoverable"
-          >
-            Writing
-          </a>
-          <a
             href="#contact"
             className="text-3xl font-display font-bold mobile-link hover:text-primary hoverable"
           >
@@ -500,18 +513,18 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="hero-image-container relative h-[400px] md:h-[600px] flex items-center justify-center order-1 lg:order-2 perspective-1000">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl animate-pulse-slow"></div>
-                <div className="hero-circle-outer absolute w-64 h-64 md:w-96 md:h-96 border border-slate-200 dark:border-white/10 rounded-full animate-spin-slow"></div>
-                <div className="hero-circle-middle absolute w-48 h-48 md:w-72 md:h-72 border border-dashed border-slate-300 dark:border-white/20 rounded-full animate-spin-slow [animation-direction:reverse]"></div>
+              <div class="hero-image-container relative h-[400px] md:h-[600px] flex items-center justify-center order-1 lg:order-2 perspective-1000">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div class="hero-circle-outer absolute w-64 h-64 md:w-96 md:h-96 border border-slate-200 dark:border-white/10 rounded-full animate-spin-slow"></div>
+                <div class="hero-circle-middle absolute w-48 h-48 md:w-72 md:h-72 border border-dashed border-slate-300 dark:border-white/20 rounded-full animate-spin-slow [animation-direction:reverse]"></div>
 
-                <div className="hero-profile-img hero-image-glow relative w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-white/10 shadow-2xl animate-[float_6s_ease-in-out_infinite] z-10 group cursor-pointer hoverable magnetic-btn">
+                <div class="hero-profile-img hero-image-glow relative w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-white/10 shadow-2xl animate-[float_6s_ease-in-out_infinite] z-10 group cursor-pointer hoverable magnetic-btn">
                   <img
-                    src="/images/photo.jpeg"
-                    alt="Pranav"
+                    src="images/photo.jpeg"
+                    alt="amine"
                     width="800"
                     height="800"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </div>
@@ -627,20 +640,25 @@ export default function App() {
                 >
                   <a
                     href="https://github.com/Pranav-Labs07"
-                    className="hover:text-primary transition-colors hover:scale-110 transform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-all duration-300 hover:scale-125 transform hover:text-black dark:hover:text-white"
                   >
                     <i className="fab fa-github"></i>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/pranav-durge-750682259?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                    className="hover:text-primary transition-colors hover:scale-110 transform"
+                    href="https://www.linkedin.com/in/pranav-durge-750682259"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-all duration-300 hover:scale-125 transform hover:text-[#0A66C2]"
                   >
                     <i className="fab fa-linkedin"></i>
                   </a>
-
                   <a
-                    href="https://www.instagram.com/pranavdurge77?igsh=dHVtaWl3a3ltbmQx"
-                    className="hover:text-primary transition-colors hover:scale-110 transform"
+                    href="https://www.instagram.com/pranavdurge77"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-all duration-300 hover:scale-125 transform hover:text-[#E4405F]"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
@@ -657,8 +675,7 @@ export default function App() {
                 Skills<span className="text-primary">.</span>
               </h2>
               <p className="text-slate-500 max-w-lg mx-auto">
-                Providing comprehensive digital solutions to help your business
-                grow.
+                Building digital solutions to solve real world problems.
               </p>
             </div>
 
@@ -822,10 +839,11 @@ export default function App() {
               <article
                 className="project-item spotlight-card group cursor-pointer project-trigger hoverable reveal-on-scroll"
                 data-filter-category="dev design"
-                data-title="Kuber"
-                data-category="UI/UX Design • Development"
-                data-image="/images/kuber.jpg"
-                data-desc="A premium fashion e-commerce platform. Headless CMS architecture with a Next.js frontend."
+                data-title="Portfolio"
+                data-category="Frontend  Development"
+                data-image="/images/portfolio.png"
+                data-desc="A premium portfolio website."
+                data-button="Open"
               >
                 <div className="spotlight-overlay"></div>
                 <div className="project-card relative w-full aspect-[4/3] bg-slate-200 dark:bg-surface rounded-2xl overflow-hidden mb-6 preserve-3d transition-transform duration-300 shadow-lg group-hover:shadow-xl border border-slate-200 dark:border-white/5">
@@ -859,10 +877,10 @@ export default function App() {
               <article
                 className="project-item spotlight-card group cursor-pointer md:mt-24 project-trigger hoverable reveal-on-scroll delay-100"
                 data-filter-category="dev"
-                data-title="Game Dashboard"
+                data-title="Kuber"
                 data-category="Dashboard • React App"
-                data-image="/images/Game Dashboard Design.jpg"
-                data-desc="A real-time financial dashboard. Interactive data visualizations built with D3.js."
+                data-image="/images/kuber.png"
+                data-desc=""
               >
                 <div className="spotlight-overlay"></div>
                 <div className="project-card relative w-full aspect-[4/3] bg-slate-200 dark:bg-surface rounded-2xl overflow-hidden mb-6 preserve-3d transition-transform duration-300 shadow-lg group-hover:shadow-xl border border-slate-200 dark:border-white/5">
