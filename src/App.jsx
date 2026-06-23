@@ -348,6 +348,7 @@ export default function App() {
       >
         <i class="fas fa-arrow-up"></i>
       </button>
+      
       <div className="bg-slate-50 text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-500 selection:bg-primary selection:text-white overflow-x-hidden ">
         <div className="fixed inset-0 z-[1] bg-noise pointer-events-none opacity-40 mix-blend-overlay"></div>
         <div
