@@ -1,8 +1,8 @@
 export default function Navbar() {
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-10">
-        <nav className="bg-white/70 dark:bg-surface/70 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-full px-6 py-3 flex items-center gap-10 shadow-sm transition-all duration-300 w-full max-w-6xl justify-between md:justify-start reveal-on-scroll">
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-6 pt-6">
+        <nav className="bg-white/70 dark:bg-surface/70 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-full px-6 py-3 flex items-center gap-10 shadow-sm transition-all duration-300 w-full max-w-2xl justify-between md:justify-start reveal-on-scroll">
           <a
             href="#"
             className="text-2xl font-bold font-display tracking-tight text-slate-900 dark:text-white hoverable magnetic-btn focus:outline-none relative z-20"
@@ -11,7 +11,7 @@ export default function Navbar() {
           </a>
 
           <div
-            className="hidden md:flex items-center gap-8 text-xl font-medium ml-auto relative z-20"
+            className="hidden md:flex items-center gap-8 text-md font-medium ml-auto relative z-20"
             id="desktop-menu"
           >
             <a
